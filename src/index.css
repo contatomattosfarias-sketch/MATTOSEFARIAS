@@ -1,0 +1,169 @@
+/* ---------------------------------------------------
+   RESET MODERNO
+--------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fonte mais suave */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove highlight feio no mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------------------------------------------------
+   IMPORT DO TAILWIND
+--------------------------------------------------- */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------
+   ESTILOS GERAIS DO PROJETO
+--------------------------------------------------- */
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc; /* Slate-50 */
+  color: #0f172a; /* Slate-900 */
+}
+
+/* Smooth fade-in global */
+.animate-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------------------------------------
+   ESTILOS PARA SCROLL PERSONALIZADO
+--------------------------------------------------- */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9; /* Slate-100 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1; /* Slate-300 */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8; /* Slate-400 */
+}
+
+/* ---------------------------------------------------
+   CLASSES UTILITÁRIAS DO PROJETO
+--------------------------------------------------- */
+
+/* Fundo escuro transparente (modais, sidebar mobile...) */
+.backdrop {
+  @apply fixed inset-0 bg-black/50 backdrop-blur-sm z-40;
+}
+
+/* Cards padrão */
+.card {
+  @apply bg-white rounded-xl shadow-sm border border-slate-200 p-6;
+}
+
+/* Títulos de página */
+.page-title {
+  @apply text-2xl font-bold text-slate-800;
+}
+
+/* Subtítulo */
+.page-subtitle {
+  @apply text-slate-500;
+}
+
+/* Botões principais */
+.btn-primary {
+  @apply bg-blue-600 text-white px-4 py-2 rounded-lg font-medium 
+         hover:bg-blue-700 transition shadow-sm;
+}
+
+/* Botões neutros */
+.btn-secondary {
+  @apply bg-white border border-slate-300 text-slate-700 px-4 py-2 
+         rounded-lg hover:bg-slate-100 transition;
+}
+
+/* Estado "loading" */
+.loading-spinner {
+  @apply animate-spin text-blue-600;
+}
+
+/* ---------------------------------------------------
+   FORMULÁRIOS
+--------------------------------------------------- */
+
+input, select, textarea {
+  @apply border border-slate-300 rounded-lg p-2 text-sm outline-none 
+         focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+}
+
+/* Label padrão */
+label {
+  @apply text-sm font-medium text-slate-700;
+}
+
+/* ---------------------------------------------------
+   LINKS
+--------------------------------------------------- */
+
+a {
+  @apply text-blue-600 hover:underline;
+}
+
+/* ---------------------------------------------------
+   MODAIS (caso use)
+--------------------------------------------------- */
+
+.modal {
+  @apply fixed inset-0 flex items-center justify-center z-50;
+}
+
+.modal-content {
+  @apply bg-white rounded-xl shadow-xl p-6 w-full max-w-lg;
+}
+
+/* ---------------------------------------------------
+   TABELAS
+--------------------------------------------------- */
+
+table {
+  @apply w-full text-left;
+}
+
+th {
+  @apply px-4 py-3 text-sm font-semibold text-slate-700 bg-slate-50;
+}
+
+td {
+  @apply px-4 py-3 text-sm text-slate-600;
+}
+
+tbody tr:hover {
+  @apply bg-slate-50/70 transition;
+}
